@@ -1,10 +1,8 @@
 /* styles.css */
-*{
+body {
   margin: 0;
   padding: 0;
-}
-.App{
-  background-color: burlywood;
+  background-color: burlywood; /* Set the background color for the entire page */
 }
 
 .movie-card {
@@ -28,9 +26,9 @@
 }
 
 .movie-card p {
-  margin-top: 5px;
+  margin-top: 15px;
+  margin-left: 15px;
   font-size: 20px;
-
 }
 
 .movie-list {
