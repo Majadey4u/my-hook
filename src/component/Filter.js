@@ -1,29 +1,11 @@
-// Filter.js
 import React, { useState } from 'react';
 
-const Filter = ({ onAddMovie, onFilter }) => {
+const Filter = ({ onFilter }) => {
   const [title, setTitle] = useState('');
   const [rating, setRating] = useState('');
-  const [posterURL, setPosterURL] = useState('');
-  const [description, setDescription] = useState('');
-
-  const handleAddMovie = () => {
-    const newMovie = {
-      title,
-      rating: parseInt(rating),
-      posterURL,
-      description
-    };
-    onAddMovie(newMovie);
-    // Clear input fields after adding the movie
-    setTitle('');
-    setRating('');
-    setPosterURL('');
-    setDescription('');
-  };
 
   const handleFilter = () => {
-    onFilter({ title, rating, posterURL, description });
+    onFilter({ title, rating });
   };
 
   return (
@@ -40,20 +22,8 @@ const Filter = ({ onAddMovie, onFilter }) => {
         value={rating}
         onChange={(e) => setRating(e.target.value)}
       />
-      <input
-        type="text"
-        placeholder="Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Poster URL"
-        value={posterURL}
-        onChange={(e) => setPosterURL(e.target.value)}
-      />
-      <button onClick={handleAddMovie}>Add</button>
       <button onClick={handleFilter}>Filter</button>
+      <button onClick={handleFilter}>Back</button>
     </div>
   );
 };
